@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Araújo - Portfólio Pessoal</title>
+    <!-- Ligação com o arquivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO E NAVEGAÇÃO (3 seções linkadas no topo) -->
+    <header>
+        <div class="container">
+            <h1>Guilherme Araújo</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Resumo</a></li>
+                    <li><a href="#interesses">Hobbies e Interesses</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SEÇÃO 1: RESUMO / QUEM É VOCÊ -->
+    <section id="sobre" class="secao">
+        <div class="container perfil-container">
+            <img src="imagens/perfil.png" alt="Foto de Guilherme Araújo" class="foto-perfil">
+            <div class="sobre-texto">
+                <h2>Quem sou eu</h2>
+                <p>Olá! Meu nome é <strong>Guilherme da Silva Leal de Araújo</strong>, moro no Rio de Janeiro. Sou formado em Engenharia Elétrica e atuo profissionalmente como <strong>Técnico de Manutenção</strong>, com especialização em automação predial, sistemas de detecção e alarme de incêndio (SDAI).</p>
+                <p>Possuo pós-graduação em Engenharia de Segurança do Trabalho e estou sempre em busca de novos desafios na área técnica e de tecnologia, unindo a minha paixão por resolução de problemas e sistemas automatizados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: HOBBIES E INTERESSES -->
+    <section id="interesses" class="secao cinza">
+        <div class="container">
+            <h2>Hobbies e Interesses</h2>
+            <div class="cards-hobbies">
+                <div class="card">
+                    <h3>🎮 Games e Tecnologia</h3>
+                    <p>Amo jogar no Nintendo Switch, explorar o universo Pokémon (incluindo VGC), jogar no PC e participar de comunidades de esports como o Clã da BX em Fortnite. Também curto hardware e automação residencial.</p>
+                </div>
+                <div class="card">
+                    <h3>🎸 Música e Lazer</h3>
+                    <p>Sou fã de rock e metalcore, marcando presença em grandes eventos como o Rock in Rio. Nos momentos livres, gosto de curtir jogos de aventura e RPG.</p>
+                </div>
+                <div class="card">
+                    <h3>💪 Estilo de Vida</h3>
+                    <p>Pratico musculação e treinamento de força regularmente na Smart Fit para manter o foco e a disciplina no dia a dia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 3: FORMULÁRIO DE CONTATO (Com validação básica em JavaScript) -->
+    <section id="contato" class="secao">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p>Envie uma mensagem (simulação de envio):</p>
+            
+            <form id="formContato" onsubmit="validarFormulario(event)">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" rows="4" placeholder="Escreva sua mensagem..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 Guilherme Araújo - Desenvolvido para o Projeto de Módulo Front-End SENAI.</p>
+    </footer>
+
+    <!-- SCRIPT DE VALIDAÇÃO BÁSICA EM JAVASCRIPT -->
+    <script>
+        function validarFormulario(event) {
+            // Evita que a página recarregue de verdade
+            event.preventDefault();
+
+            let nome = document.getElementById("nome").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let mensagem = document.getElementById("mensagem").value.trim();
+
+            if (nome === "" || email === "" || mensagem === "") {
+                alert("Por favor, preencha todos os campos do formulário antes de enviar!");
+            } else {
+                alert(`Obrigado pelo contato, ${nome}! Mensagem simulada enviada com sucesso.`);
+                document.getElementById("formContato").reset();
+            }
+        }
+    </script>
+</body>
+</html>
